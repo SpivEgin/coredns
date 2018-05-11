@@ -16,6 +16,7 @@ ADD Corefile /opt/dns/Corefile
 ADD TLM.crt /etc/ssl/certs/
 ADD cockroach.yml /opt/dns
 RUN update-ca-certificates &&\
+    chmod + /opt/dns/coredns /opt/dns/coredb &&\
     ln -s /opt/dns/coredns /bin/coredns &&\
     ln -s /opt/dns/coredb /bin/coredb &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
