@@ -4,6 +4,7 @@ FROM debian:stretch-slim
 
 RUN apt-get -y update &&\
     apt-get -y install bind9utils ca-certificates openssl &&\
+    apt-get -y upgrade &&\
     apt-get -y clean &&\
     mkdir /opt/dns/ &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
