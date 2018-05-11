@@ -1,0 +1,18 @@
+---
+cockroach:
+  adapter: "postgres"
+  name: "coredns"
+  host: "10.71.34.61"
+  port: 26257
+  user: "screwdriver"
+  password: ""
+  root: "root"
+  test: true
+  sslmode: "verify-ca"
+  sslcert: "certs/client.screwdriverfull.crt"
+  sslkey: "certs/client.screwdriverfull.key"
+  sslrootcert: "certs/ca.crt"
+  rootcert: "certs/client.root.crt"
+  rootkey: "certs/client.root.key"
+
+...
