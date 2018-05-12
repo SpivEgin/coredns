@@ -3,11 +3,14 @@
 # Answer every below the root, with the whoami plugin. Log all queries
 # and errors on standard output.
 . {
+    hosts adfreezone {
+    }
+
     whoami  # coredns.io/plugins/whoami
     log     # coredns.io/plugins/log
     errors  # coredns.io/plugins/errors
-    forward . tls://9.9.9.9 {
-       tls_servername dns.quad9.net
+    forward . tls://1.1.1.1 {
+       tls_servername 1.1.1.1
        health_check 5s
     }
     cache 30
