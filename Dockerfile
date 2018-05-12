@@ -12,12 +12,12 @@ ADD coredns /opt/dns/coredns
 ADD coredb /opt/dns/coredb
 ADD certs /opt/dns/certs
 ADD adfree /opt/dns/adfree
-ADD adfreezone.list /opt/dns/adfreezone.list
+ADD bash/main.sh /opt/dns/main.sh
 ADD Corefile /opt/dns/Corefile
 ADD TLM.crt /etc/ssl/certs/
 ADD cockroach.yml /opt/dns
 RUN update-ca-certificates &&\
-    chmod +x /opt/dns/coredns /opt/dns/coredb /opt/dns/adfree&&\
+    chmod +x /opt/dns/coredns /opt/dns/coredb /opt/dns/adfree /opt/dns/Corefile &&\
     ln -s /opt/dns/coredns /bin/coredns &&\
     ln -s /opt/dns/adfree /bin/adfree &&\
     ln -s /opt/dns/coredb /bin/coredb &&\
@@ -27,4 +27,4 @@ WORKDIR /opt/dns
 
 EXPOSE 53 53/udp
 #ENTRYPOINT ["/opt/dns/coredns"]
-CMD ["/opt/dns/coredns"]
+CMD ["/opt/dns/main.sh"]
