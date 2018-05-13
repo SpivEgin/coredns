@@ -1,5 +1,5 @@
 . {
-    hosts adfreezone {
+    hosts adfreezone2018 {
      fallthrough .
     }
     log     # coredns.io/plugins/log
