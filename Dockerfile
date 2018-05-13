@@ -27,4 +27,4 @@ WORKDIR /opt/dns
 
 EXPOSE 53 53/udp
 #ENTRYPOINT ["/opt/dns/coredns"]
-CMD ["./opt/dns/main.sh"]
+CMD ["/opt/dns/main.sh"]
