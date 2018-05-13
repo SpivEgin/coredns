@@ -1,12 +1,32 @@
 . {
+    reload 5s
     hosts adfreezone2018 {
      fallthrough .
     }
-    log     # coredns.io/plugins/log
+
+    log . "{name} {remote}"     # coredns.io/plugins/log
+
     forward . tls://1.1.1.1 {
        tls_servername 1.1.1.1
        health_check 5s
     }
-    cache 30
+    
+}
+
+pandora.com {
+    hosts adfreezone2018 {
+     fallthrough .
+    }
+    template IN A . {
+      match ^(mediaserver)(.*)(v4v6)
+      answer "{{ .Name }} 60 IN A 0.0.0.0"
+      fallthrough .
+    }
+    log . "Pandora - {name} {remote}"
+    forward . tls://1.1.1.1 {
+       tls_servername 1.1.1.1
+       health_check 5s
+    }
+        
 
 }
