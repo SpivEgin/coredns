@@ -39,6 +39,13 @@ pandora.com {
 campaign.adobe.com {
     log . "Adobe - {name} {remote} {class}"
 }
+omtrdc.net {
+    log . "Adobe_omtrdc - {name} {remote} {class}"
+}
+pinsightmedia.com adxcel.com googletagservices.com doubleclick.net {
+    log . "AdCompany - {name} {remote} {class}"
+}
+
 #t1-3.p-cdn.us
 p-cdn.us {
     template IN A . {
