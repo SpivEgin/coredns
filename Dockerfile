@@ -12,6 +12,7 @@ ADD coredns /opt/dns/coredns
 ADD coredb /opt/dns/coredb
 ADD certs /opt/dns/certs
 ADD adfree /opt/dns/adfree
+ADD adfreezone.list /opt/dns/adfreezone.list
 ADD bash/main.sh /opt/dns/main.sh
 ADD Corefile /opt/dns/Corefile
 ADD TLM.crt /etc/ssl/certs/
