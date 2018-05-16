@@ -3,7 +3,7 @@ FROM debian:stretch-slim
 # Only need ca-certificates & openssl if want to use DNS over TLS (RFC 7858).
 
 RUN apt-get -y update &&\
-    apt-get -y install bind9utils ca-certificates openssl wget &&\
+    apt-get -y install bind9utils ca-certificates openssl &&\
     apt-get -y clean &&\
     mkdir /opt/dns/ &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
