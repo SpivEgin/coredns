@@ -1,2 +1,2 @@
-git add -A && git commit -m "Re-wrote sauce coredns plugin" && git 
+git add -A && git commit -m "Re-wrote sauce coredns plugin v2" && git 
 push
